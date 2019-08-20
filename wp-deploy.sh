@@ -7,17 +7,13 @@ set -ex
 
 BRANCH="master"
 SRC_DIR="${$PWD}"
+RELEASE_DIR="${$PWD}/releases/20190820123046"
 BUILD_DIR="${SRC_DIR}/.wpengine-deployment-$(date +%s)"
 REPO_SSH_URL="git@git.wpengine.com:production/boltfinancial.git"
 COMMIT_SHA="6c0a8e8133eb1a500bd489b09bc9bcaaa8acb72d"
 DEPLOY_BRANCH="${BRANCH}"
 THEME_NAME="bolt"
 
-cd $SRC_DIR
-COMMIT_AUTHOR_NAME="$( git log --format=%an -n 1 ${COMMIT_SHA} )"
-COMMIT_AUTHOR_EMAIL="$( git log --format=%ae -n 1 ${COMMIT_SHA} )"
-COMMIT_COMMITTER_NAME="$( git log --format=%cn -n 1 ${COMMIT_SHA} )"
-COMMIT_COMMITTER_EMAIL="$( git log --format=%ce -n 1 ${COMMIT_SHA} )"
 
 if [[ -d "$BUILD_DIR" ]]; then
 	echo "ERROR: ${BUILD_DIR} already exists."
@@ -29,7 +25,7 @@ echo "Deploying ${BRANCH}"
 
 # Making the directory we're going to sync the build into
 git clone "${REPO_SSH_URL}" "${BUILD_DIR}"
-cd $SRC_DIR
+cd $RELEASE_DIR
 
 
 # Copy the files over
