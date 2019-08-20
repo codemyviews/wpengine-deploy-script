@@ -39,7 +39,7 @@ if [ -z "$(git status --porcelain)" ]; then
 fi
 
 # Commit it.
-git commit -a -m "Commit https://bitbucket.org/codemyviews/boltcom/commits/${COMMIT_SHA} at $(date +%s)"
+git commit -a -m "Commit ${COMMIT_SHA} from mayvendev.com repo for ${THEME_NAME} at $(date +%s)"
 
 
 # Push it (push it real good).
