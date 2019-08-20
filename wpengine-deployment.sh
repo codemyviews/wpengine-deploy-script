@@ -26,7 +26,7 @@ cd $RELEASE_DIR
 
 echo "Syncing files... quietly"
 
-rsync -av --delete --exclude "themes/${THEME_NAME}/.gitignore" "${RELEASE_DIR}/wp-content/" "${BUILD_DIR}/wp-content/"
+rsync -av --delete --exclude "themes/${THEME_NAME}/.gitignore" --exclude "themes/${THEME_NAME}/node_modules"  "${RELEASE_DIR}/wp-content/" "${BUILD_DIR}/wp-content/"
 
 
 # Add changed files, delete deleted, etc, etc, you know the drill
