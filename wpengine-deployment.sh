@@ -1,6 +1,8 @@
 #!/bin/bash -e
 #
 # Deploy your branch on WPEngine.
+# This was inpired by WP VIP Go deploy script for Travis CI and Circle.
+# Modified by connor@mayvendev.com to make WPEngine deployments easier without having to clog repos with compiled files.
 #
 
 set -ex
