@@ -5,15 +5,6 @@
 
 set -ex
 
-BRANCH="master"
-SRC_DIR="/home/forge/bolt-production"
-RELEASE_DIR="/home/forge/bolt-production/releases/20190820123046"
-BUILD_DIR="${SRC_DIR}/.wpengine-deployment-$(date +%s)"
-REPO_SSH_URL="git@git.wpengine.com:production/boltfinancial.git"
-COMMIT_SHA="6c0a8e8133eb1a500bd489b09bc9bcaaa8acb72d"
-DEPLOY_BRANCH="${BRANCH}"
-THEME_NAME="bolt"
-
 
 if [[ -d "$BUILD_DIR" ]]; then
 	echo "ERROR: ${BUILD_DIR} already exists."
