@@ -8,7 +8,7 @@
 set -ex
 
 
-echo "Syncing plugin directory"
+echo "Syncing theme directory"
 # Deploying theme folder changes
 rsync --progress -avzh --delete "${RELEASE_DIR}"/wp-content/themes   "${SITE_NAME}"@"${SITE_NAME}".ssh.wpengine.net:/home/wpe-user/sites/"${SITE_NAME}"/wp-content/ --exclude "lsvp/node_modules"
 
