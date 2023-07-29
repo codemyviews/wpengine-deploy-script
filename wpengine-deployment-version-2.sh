@@ -10,12 +10,12 @@ set -ex
 
 echo "Syncing theme directory"
 # Deploying theme folder changes
-rsync --progress -avzh --delete "${RELEASE_DIR}"/wp-content/themes   "${SITE_NAME}"@"${SITE_NAME}".ssh.wpengine.net:/home/wpe-user/sites/"${SITE_NAME}"/wp-content/ --exclude "lsvp/node_modules"
+rsync --progress -avzh --delete "${RELEASE_DIR}"/wp-content/themes   "${SITE_NAME}"@"${SITE_NAME}".ssh.wpengine.net:/home/wpe-user/sites/"${SITE_NAME}"/wp-content/ --exclude "${THEME_NAME}/node_modules"
 
 
 echo "Syncing plugin directory"
 # Deploying plugin folder changes
-rsync --progress -avzh --delete "${RELEASE_DIR}"/wp-content/plugins   "${SITE_NAME}"@"${SITE_NAME}".ssh.wpengine.net:/home/wpe-user/sites/"${SITE_NAME}"/wp-content/ --exclude "lsvp/node_modules"
+rsync --progress -avzh --delete "${RELEASE_DIR}"/wp-content/plugins   "${SITE_NAME}"@"${SITE_NAME}".ssh.wpengine.net:/home/wpe-user/sites/"${SITE_NAME}"/wp-content/ --exclude "${THEME_NAME}/node_modules"
 
 echo "Flushing WPEngine cache"
 # Flush WPEngine cache
